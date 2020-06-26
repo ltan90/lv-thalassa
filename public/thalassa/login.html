@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" href="assets/fonts/font-awesome.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/js/slick/slick.css">
+	<link rel="stylesheet" href="assets/js/slick/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+</head>
+<body>
+<main id="content" class="login-content text-center">
+	<div class="container">
+		<a href="" class="logo"><img src="assets/images/logo.png" alt=""></a>
+		<h1 class="font-bold">Sign in to Thalassa Concept</h1>
+		<form action="" id="loginForm">
+			<div class="form-group text-left">
+				<label>Profile ID</label>
+				<input type="text" class="form-control" name="profile_id" placeholder="Enter your Profile ID">
+			</div>
+			<div class="form-group text-left">
+				<label>User ID</label>
+				<input type="text" class="form-control" name="user_id" placeholder="Enter your User ID">
+			</div>
+			<div class="form-group form-remember text-left">
+				<label>
+					<input type="checkbox" name="" id=""> Remember me?
+				</label>
+			</div>
+			<div class="form-submit">
+				<button class="btn btn-default" type="submit">Sign In</button>
+			</div>
+		</form>
+	</div>
+</main>
+<footer id="footer" class="footer-login text-center">
+	<div class="container">
+		<div class="languages text-left">
+			<a href="" class="current"><img src="assets/images/fr.png" alt=""> Francais</a>
+			<ul>
+				<li><a href=""><img src="assets/images/fr.png" alt=""> Francais</a></li>
+				<li><a href=""><img src="assets/images/en.jpg" alt=""> England</a></li>
+			</ul>
+		</div>
+		<div class="copyright">© 2020 Thalassa Concept. All rights reserved.</div>
+	</div>
+</footer>
+<script src="assets/js/jquery-3.5.0.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/slick/slick.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+jQuery(function($){
+	$("#loginForm").validate({
+	  rules: {
+	    profile_id: "required",
+	    user_id: "required"
+	  },
+	  messages: {
+  	 	profile_id: "Please enter correct your profile id",
+    	user_id: "Please enter correct your user id"
+	  }
+	});
+})
+</script>
+</body>
+</html>
