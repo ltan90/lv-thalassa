@@ -20,8 +20,9 @@ Route::get('/logout', 'LoginController@logout')->name('get.logout');
 Route::group(['middleware' => 'auth.user'], function () {
     Route::get('/', 'HomeController@getCategories')->name('categories');
     Route::get('/categories', 'HomeController@getCategories')->name('categories');
-    Route::get('/{slug}.html', 'HomeController@getItem')->name('item');
-    Route::get('/categories/{slug}', 'HomeController@getSubCategories')->name('sub-categories');
+    Route::get('/categories/{slugParent}', 'HomeController@getSubCategories')->name('sub-categories');
+    Route::get('/{slugParent}/{slugChild}', 'HomeController@getProducts')->name('products');
+    Route::get('/{slugParent}/{slug}.html', 'HomeController@getItem')->name('item');
     Route::get('/cart', 'HomeController@getCart')->name('cart');
     Route::post('/order', 'HomeController@order')->name('order');
 });

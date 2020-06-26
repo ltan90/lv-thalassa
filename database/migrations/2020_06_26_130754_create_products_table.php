@@ -19,7 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->text('excerpt');
+            $table->text('galleries')->nullable();
+            $table->text('excerpt')->nullable();
             $table->double('price')->default(0);
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('PENDING');
             $table->timestamps();

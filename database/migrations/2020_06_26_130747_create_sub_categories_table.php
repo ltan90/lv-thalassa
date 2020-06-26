@@ -15,11 +15,11 @@ class CreateSubCategoriesTable extends Migration
     {
         Schema::create('sub_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->nullable();
+            $table->integer('product_category_id')->nullable();
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->text('excerpt');
+            $table->text('excerpt')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('PENDING');
             $table->timestamps();
         });

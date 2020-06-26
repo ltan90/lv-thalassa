@@ -3,7 +3,7 @@
         <div class="container">
             <div class="relative-section text-center">
                 <a href="{{ url('/') }}" class="toggle-menu"><img src="{{ asset("assets/images/menu.png") }}" alt=""></a>
-                <a href="{{ url('/') }}" class="logo"><img src="{{ asset("assets/images/logo.png") }}" alt=""></a>
+                <a href="{{ url('/') }}" class="logo"><img src="{{ Voyager::image(setting('site.logo')) }}" alt=""></a>
                 <div class="header-right">
                     <a href="{{ url('/') }}" class="toggle-cars relative-section"><img src="{{ asset("assets/images/cart-icon.png") }}" alt=""><span>3</span></a>
                 </div>

@@ -4,7 +4,7 @@
     <main id="content" class="globale-content content-page">
         <div class="container">
             <div class="brecump">
-                <a href="home.html">Home</a> <img src="assets/images/arrow-right.png" alt="">
+                <a href="{{ url('/') }}">Home</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
                 <span>Categories</span>
             </div>
             <div class="categories">

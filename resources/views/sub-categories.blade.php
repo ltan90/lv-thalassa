@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>Sub Category</title>
+    <title>{{ $category->title }}</title>
 @stop
 @section('content')
     <main id="content" class="globale-content content-page">
@@ -8,20 +8,20 @@
             <div class="brecump">
                 <a href="{{ url('/') }}">Home</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
                 <a href="{{ url('/categories') }}">Categories</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
-                <span>Hydrotherapy</span>
+                <span>{{ $category->title }}</span>
             </div>
-            <h2 class="section-title">Hydrotherapy</h2>
+            <h2 class="section-title">{{ $category->title }}</h2>
             <ul class="list-inline catsub-list text-center">
-                @for ($i = 1; $i <= 8; $i++)
+                @foreach($subCategories as $item)
                     <li class="item-inline">
-                        <a class="catsub-item font-bold" href="">
+                        <a class="catsub-item font-bold" href="{{ url($category->slug . '/' . $item->slug) }}">
                             <div class="image">
-                                <img src="{{ asset("assets/images/sub".$i.".png") }}" alt="">
+                                <img width="45px" src="{{ !empty($item->image) ? asset(Storage::url($item->image)) : asset('assets/images/sub1.png') }}" alt="{{ $item->title }}">
                             </div>
-                            Icon sub {{ $i }}
+                            {{ $item->title }}
                         </a>
                     </li>
-                @endfor
+                @endforeach
             </ul>
         </div>
     </main>
