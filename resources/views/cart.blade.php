@@ -73,8 +73,10 @@
         </div>
     </div>
 @endsection
+@section('footer')
 
-@section('jscript')
+@endsection
+@section('js')
     <script>
         jQuery(function($){
             $('.cart-list .cart-item .cart-remove').on('click',function() {

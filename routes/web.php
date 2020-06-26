@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LoginController@index');
-Route::get('/login', 'LoginController@index');
-Route::post('/', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('get.login');
+Route::post('/login', 'LoginController@login')->name('post.login');
+Route::get('/logout', 'LoginController@logout')->name('get.logout');
 
-Route::get('/categories', 'HomeController@getCategories')->name('categories');
-Route::get('/categories/{slug}', 'HomeController@getSubCategories');
-Route::get('/cart', 'HomeController@getCart')->name('cart');
-//Route::group(['middleware' => 'auth.user'], function () {
-//    Route::get('/categories', 'HomeController@getCategories');
-//});
+Route::group(['middleware' => 'auth.user'], function () {
+    Route::get('/', 'HomeController@getCategories')->name('categories');
+    Route::get('/categories', 'HomeController@getCategories')->name('categories');
+    Route::get('/{slug}.html', 'HomeController@getItem')->name('item');
+    Route::get('/categories/{slug}', 'HomeController@getSubCategories')->name('sub-categories');
+    Route::get('/cart', 'HomeController@getCart')->name('cart');
+    Route::post('/order', 'HomeController@order')->name('order');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

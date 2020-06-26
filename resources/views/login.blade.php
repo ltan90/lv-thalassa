@@ -12,15 +12,19 @@
         <div class="container">
             <a href="" class="logo"><img src="assets/images/logo.png" alt=""></a>
             <h1 class="font-bold">Sign in to Thalassa Concept</h1>
-            <form action="" id="loginForm">
+            <form action="{{ route('post.login') }}" id="loginForm" method="POST">
+                @csrf
                 <div class="form-group text-left">
                     <label>Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                    <input type="text" class="form-control {{ isset($errors) && $errors->has('email') ? 'error' : '' }}" name="email" placeholder="Enter your email">
+                    {!! $errors->first('email', '<label id="email-error" class="error" for="email">:message</label>') !!}
                 </div>
                 <div class="form-group text-left">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Enter your password">
+                    <input type="password" class="form-control {{ isset($errors) && $errors->has('password') ? 'error' : '' }}" name="password" placeholder="Enter your password">
+                    {!! $errors->first('password', '<label id="email-error" class="error" for="email">:message</label>') !!}
                 </div>
+                {!! isset($errorLogin) ? '<label id="email-error" class="error" for="email">'.$errorLogin.'</label>' : '' !!}
                 <div class="form-group form-remember text-left">
                     <label>
                         <input type="checkbox" name="chk-remember"> Remember me?

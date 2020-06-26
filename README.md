@@ -10,7 +10,7 @@
 5. Run command: <b> composer require tcg/voyager </b> - to setup voyager
 5. Run command: <b> php artisan voyager:install </b> - to initialize the database 
 or Run command: <b> php artisan voyager:install --with-dummy </b> to initialize the database and data demo
-User default: admin@admin.com/password
+<p>User default: admin@admin.com/password</p>
 
 ## Clear cache
 Run command: <b> php artisan config:cache </b> - to clear cache

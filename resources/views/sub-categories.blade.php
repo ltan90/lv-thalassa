@@ -6,8 +6,8 @@
     <main id="content" class="globale-content content-page">
         <div class="container">
             <div class="brecump">
-                <a href="home.html">Home</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
-                <a href="categories.html">Categories</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
+                <a href="{{ url('/') }}">Home</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
+                <a href="{{ url('/categories') }}">Categories</a> <img src="{{ asset("assets/images/arrow-right.png") }}" alt="">
                 <span>Hydrotherapy</span>
             </div>
             <h2 class="section-title">Hydrotherapy</h2>

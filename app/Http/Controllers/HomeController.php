@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductCategory;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function getCategories(){
-        return view('categories');
+        $categories = ProductCategory::where('status','PUBLISHED')->orderBy('updated_at','DESC')->get();
+        return view('categories', compact('categories'));
     }
 
     public function getSubCategories(){
